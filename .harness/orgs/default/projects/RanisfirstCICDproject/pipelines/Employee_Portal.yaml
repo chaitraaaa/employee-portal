@@ -71,3 +71,12 @@ pipeline:
                     image: node:20
                     shell: Sh
                     command: npm test || true
+              - step:
+                  type: Run
+                  name: Build Application
+                  identifier: Build_Application
+                  spec:
+                    connectorRef: DockerConnector
+                    image: node:20
+                    shell: Sh
+                    command: npm run build
