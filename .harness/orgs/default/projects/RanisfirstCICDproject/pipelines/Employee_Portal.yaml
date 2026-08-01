@@ -1,0 +1,55 @@
+pipeline:
+  name: Employee_Portal
+  identifier: Employee_Portal
+  projectIdentifier: RanisfirstCICDproject
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Harnessgithubrepo
+        repoName: employee-portal
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: GKEConnector
+              namespace: harness-delegate-ng
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Verify Environment
+                  identifier: Verify_Environment
+                  spec:
+                    connectorRef: DockerConnector
+                    image: node:20
+                    shell: Sh
+                    command: |-
+                      echo "Current Directory"
+                      pwd
+
+                      echo "Listing Files"
+                      ls -la
+
+                      echo "Node Version"
+                      node -v
+
+                      echo "NPM Version"
+                      npm -v
