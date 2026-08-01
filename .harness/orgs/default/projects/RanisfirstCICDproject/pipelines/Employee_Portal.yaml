@@ -53,3 +53,12 @@ pipeline:
 
                       echo "NPM Version"
                       npm -v
+              - step:
+                  type: Run
+                  name: Install Dependencies
+                  identifier: Install_Dependencies
+                  spec:
+                    connectorRef: DockerConnector
+                    image: node:20
+                    shell: Sh
+                    command: npm install
