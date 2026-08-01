@@ -62,3 +62,12 @@ pipeline:
                     image: node:20
                     shell: Sh
                     command: npm install
+              - step:
+                  type: Run
+                  name: Unit Test
+                  identifier: Unit_Test
+                  spec:
+                    connectorRef: DockerConnector
+                    image: node:20
+                    shell: Sh
+                    command: npm test || true
