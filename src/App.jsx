@@ -1,20 +1,27 @@
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div>
-      <h1>Employee Portal</h1>
-      <h2>Welcome to the Employee Portal</h2>
+    <>
+      <Navbar />
 
-      <hr />
+      <div style={{ padding: "30px" }}>
+        <h1>Employee Portal</h1>
 
-      <button>Login</button>
+        <h3>Welcome to Employee Portal</h3>
 
-      <button>Dashboard</button>
+        <p>
+          This application is developed for learning DevOps CI/CD using
+          Harness.
+        </p>
 
-      <button>Profile</button>
+        <button>Login</button>
+      </div>
 
-      <button>About</button>
-    </div>
-  )
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
