@@ -22,7 +22,7 @@ spec:
       containers:
       - name: employee-portal
 
-        image: <YOUR_DOCKER_USERNAME>/employee-portal-repo:1.0
+        image: chaitrashree22/employee-portal-repo:1.0
 
         imagePullPolicy: Always
 
