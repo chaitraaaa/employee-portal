@@ -80,3 +80,34 @@ pipeline:
                     image: node:20
                     shell: Sh
                     command: npm run build
+    - stage:
+        name: Docker-Build
+        identifier: DockerBuild
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: GKEConnector
+              namespace: harness-delegate-ng
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: DockerConnector
+                    repo: chaitrashree22/employee-portal-repo
+                    tags:
+                      - "1.0"
+                    caching: false
