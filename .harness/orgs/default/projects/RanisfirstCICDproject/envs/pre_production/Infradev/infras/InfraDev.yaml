@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: Infra-Dev
+  identifier: InfraDev
+  orgIdentifier: default
+  projectIdentifier: RanisfirstCICDproject
+  environmentRef: Infradev
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: GKEConnector
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
