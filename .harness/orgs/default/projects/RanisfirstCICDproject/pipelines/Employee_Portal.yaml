@@ -97,6 +97,7 @@ pipeline:
             spec:
               connectorRef: GKEConnector
               namespace: harness-delegate-ng
+              automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
           execution:
@@ -108,8 +109,7 @@ pipeline:
                   spec:
                     connectorRef: DockerConnector
                     repo: chaitrashree22/employee-portal-repo
-                    tags:
-                      - "1.0"
+                    tags: <+input>
                     caching: false
     - stage:
         name: Deploy
