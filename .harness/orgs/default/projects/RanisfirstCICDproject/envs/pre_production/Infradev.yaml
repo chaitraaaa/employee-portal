@@ -1,5 +1,5 @@
 environment:
-  name: Infra-dev
+  name: Dev
   identifier: Infradev
   description: ""
   tags: {}
