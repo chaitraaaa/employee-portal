@@ -1,0 +1,5 @@
+service:
+  name: emp-portal-svc
+  identifier: empportalsvc
+  orgIdentifier: default
+  projectIdentifier: RanisfirstCICDproject
