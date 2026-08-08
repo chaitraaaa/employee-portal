@@ -1,0 +1,8 @@
+environment:
+  name: Infra-dev
+  identifier: Infradev
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: RanisfirstCICDproject
