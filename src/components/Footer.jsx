@@ -1,3 +1,5 @@
+import React from "react";
+
 function Footer() {
   return (
     <footer
@@ -5,7 +7,7 @@ function Footer() {
         backgroundColor: "#333",
         color: "white",
         padding: "10px",
-        marginTop: "30px"
+        marginTop: "30px",
       }}
     >
       <p>© 2026 Employee Portal</p>
