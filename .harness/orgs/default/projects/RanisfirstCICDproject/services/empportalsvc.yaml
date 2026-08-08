@@ -3,3 +3,22 @@ service:
   identifier: empportalsvc
   orgIdentifier: default
   projectIdentifier: RanisfirstCICDproject
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: k8s
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: Harnessgithubrepo
+                  gitFetchType: Branch
+                  paths:
+                    - k8s
+                  repoName: employee-portal
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+    type: Kubernetes
