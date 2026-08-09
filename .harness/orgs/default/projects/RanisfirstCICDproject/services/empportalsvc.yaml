@@ -21,4 +21,15 @@ service:
                   branch: main
               skipResourceVersioning: false
               enableDeclarativeRollback: false
+      artifacts:
+        primary:
+          primaryArtifactRef: myDockerArtifact
+          sources:
+            - spec:
+                connectorRef: DockerConnector
+                imagePath: chaitrashree22/employee-portal-repo
+                tag: <+pipeline.sequenceId>
+                digest: ""
+              identifier: myDockerArtifact
+              type: DockerRegistry
     type: Kubernetes
