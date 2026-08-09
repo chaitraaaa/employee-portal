@@ -22,7 +22,7 @@ spec:
       containers:
       - name: employee-portal
 
-        image: chaitrashree22/employee-portal-repo:1.0
+        image: chaitrashree22/employee-portal-repo:1.3
 
         imagePullPolicy: Always
 
