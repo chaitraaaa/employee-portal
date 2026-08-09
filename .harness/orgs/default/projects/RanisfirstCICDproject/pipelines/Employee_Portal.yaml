@@ -109,7 +109,8 @@ pipeline:
                   spec:
                     connectorRef: DockerConnector
                     repo: chaitrashree22/employee-portal-repo
-                    tags: <+input>
+                    tags:
+                      - <+pipeline.sequenceId>
                     caching: false
     - stage:
         name: Deploy
