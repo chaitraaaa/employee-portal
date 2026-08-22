@@ -22,7 +22,7 @@ spec:
       containers:
       - name: employee-portal
 
-        image: chaitrashree22/employee-portal-repo:<+artifact.tag>
+        image: chaitrashree22/employee-portal-repo:<+serviceConfig.artifacts.primary.tag>
 
         imagePullPolicy: Always
 
