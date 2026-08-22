@@ -70,7 +70,7 @@ pipeline:
                     connectorRef: DockerConnector
                     image: node:20
                     shell: Sh
-                    command: npm test || true
+                    command: npm test
               - step:
                   type: Run
                   name: Build Application
