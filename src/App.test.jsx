@@ -1,9 +1,15 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { test, expect } from "vitest";
 import App from "./App";
 
-test("Employee Portal heading is displayed", () => {
+test("Employee Portal main heading is displayed", () => {
   render(<App />);
 
-  expect(screen.getByText("Employee Portal")).toBeDefined();
+  const heading = screen.getByRole("heading", {
+    name: "Employee Portal",
+    level: 1
+  });
+
+  expect(heading).toBeDefined();
 });
